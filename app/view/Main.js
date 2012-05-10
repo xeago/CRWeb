@@ -2,47 +2,50 @@ Ext.define("CRWeb.view.Main", {
     extend: 'Ext.tab.Panel',
     requires: [
         'Ext.TitleBar',
-        'Ext.Video'
     ],
     config: {
         tabBarPosition: 'bottom',
 
         items: [
             {
-                title: 'Welcome',
+                xtype: 'nestedlist',
+				title: 'Nieuws',
                 iconCls: 'home',
+				displayField: 'title',
+				
+				store: {
+					type: 'tree',
 
-                styleHtmlContent: true,
-                scrollable: true,
+					fields: [
+						'title', 'link', 'author', 'contentSnippet', 'content',
+						{name: 'leaf', defaultValue: true}
+					],
 
-                items: {
-                    docked: 'top',
-                    xtype: 'titlebar',
-                    title: 'Welcome to Sencha Touch 2'
-                },
+					root: {
+						leaf: false
+					},
 
-                html: [
-                    "You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
-                    "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
-                    "and refresh to change what's rendered here."
-                ].join("")
-            },
-            {
-                title: 'Get Started',
-                iconCls: 'action',
-
-                items: [
-                    {
-                        docked: 'top',
-                        xtype: 'titlebar',
-                        title: 'Getting Started'
-                    },
-                    {
-                        xtype: 'video',
-                        url: 'http://av.vimeo.com/64284/137/87347327.mp4?token=1330978144_f9b698fea38cd408d52a2393240c896c',
-                        posterUrl: 'http://b.vimeocdn.com/ts/261/062/261062119_640.jpg'
-                    }
-                ]
+					proxy: {
+						type: 'jsonp',
+						url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://feeds.feedburner.com/SenchaBlog&num=10',
+						reader: {
+							type: 'json',
+							rootProperty: 'responseData.feed.entries'
+						}
+					}
+				},
+				
+				detailCard: {
+					xtype: 'panel',
+					scrollable: true,
+					styleHtmlContent: true
+				},
+			
+				listeners: {
+					itemtap: function(nestedList, list, index, element, post) {
+						this.getDetailCard().setHtml(post.get('content'));
+					}
+				}
             }
         ]
     }
