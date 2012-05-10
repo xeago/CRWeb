@@ -4,7 +4,7 @@ Ext.define("CRWeb.view.Main", {
         'Ext.TitleBar',
     ],
     config: {
-        tabBarPosition: 'bottom',
+        tabBarPosition: 'top',
 
         items: [
             {
@@ -17,7 +17,7 @@ Ext.define("CRWeb.view.Main", {
 					type: 'tree',
 
 					fields: [
-						'title', 'link', 'author', 'contentSnippet', 'content',
+						'title', 'link', 'content',
 						{name: 'leaf', defaultValue: true}
 					],
 
@@ -46,7 +46,28 @@ Ext.define("CRWeb.view.Main", {
 						this.getDetailCard().setHtml(post.get('content'));
 					}
 				}
-            }
+            },
+			{
+				xtype: 'nestedlist',
+				title: 'Nieuws',
+                iconCls: 'home',
+				displayField: 'title',
+				
+			},
+			{
+				xtype: 'nestedlist',
+				title: 'Nieuws',
+                iconCls: 'home',
+				displayField: 'title',
+				
+			},
+			{
+				xtype: 'nestedlist',
+				title: 'Sponsoren',
+                iconCls: 'home',
+				displayField: 'title',
+				
+			}
         ]
     }
 });

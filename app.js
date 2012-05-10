@@ -5,7 +5,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    views: ['Main'],
+    //views: ['Main'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -29,8 +29,60 @@ Ext.application({
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('CRWeb.view.Main'));
+        //// Initialize the main view
+        //Ext.Viewport.add(Ext.create('CRWeb.view.Main'));
+		
+		Ext.Viewport.add({
+            xtype: 'tabpanel',
+            fullscreen: true,
+            tabBarPosition: 'top',
+
+            items: [
+                // This is the news page. It uses a tree store to load its data from blog.json
+                {
+                    xtype: 'nestedlist',
+                    title: 'Nieuws',
+                    iconCls: 'home',
+                    cls: 'blog',
+                    displayField: 'title',
+
+                    store: {
+                        type: 'tree',
+
+                        fields: ['title', 'link', 'content', {
+                            name: 'leaf',
+                            defaultValue: true
+                        }],
+
+                        root: {
+                            leaf: false
+                        },
+
+                        proxy: {
+                            type: 'jsonp',
+                            url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://feeds.feedburner.com/SenchaBlog&num=10',
+                            reader: {
+                                type: 'json',
+                                rootProperty: 'responseData.feed.entries'
+                            }
+                        }
+                    },
+
+                    detailCard: {
+                        xtype: 'panel',
+                        scrollable: true,
+                        styleHtmlContent: true
+                    },
+
+                    listeners: {
+                        itemtap: function(nestedList, list, index, element, post) {
+                            this.getDetailCard().setHtml(post.get('content'));
+                        }
+                    }
+                },
+				
+			]
+		});
     },
 
     onUpdated: function() {
