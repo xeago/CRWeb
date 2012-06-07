@@ -1,4 +1,6 @@
 Ext.application({
+    controllers: ["NewsController"],
+
     name: 'CRWeb',
 
     requires: [

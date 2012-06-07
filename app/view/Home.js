@@ -8,6 +8,7 @@ Ext.define("CRWeb.view.Home", {
 		displayField:'title',
 		scrollable:true,
 		styleHtmlContent:true,
+		cls: 'home',
 		
 		html: [
 				'<img src="http://staging.sencha.com/img/sencha.png" />',
