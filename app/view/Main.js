@@ -11,7 +11,9 @@ Ext.define("CRWeb.view.Main", {
 
         items: [
 			{ xtype: 'Home' },
-			{ xtype: 'News' }
+			{ xtype: 'News' },
+			{ xtype: 'Tweets'}
+			
         ]
 		
     }
