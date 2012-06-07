@@ -1,14 +1,20 @@
+Ext.Loader.setPath({  
+	'Ext': 'sdk/src/',
+    'CRWeb': 'app'
+});
+
 Ext.application({
-    controllers: ["NewsController"],
-
     name: 'CRWeb',
-
+	controllers:['NewsController','Tweets'],
+	
     requires: [
         'Ext.MessageBox'
     ],
 
-    views: ['Main','News','Home','Player'],
-
+    views: ['Main','News','Tweets','Home','Player'],
+	stores: ['Tweets',],
+	twitterSearch: 'Carnaval Radio',
+	
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',

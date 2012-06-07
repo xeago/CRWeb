@@ -12,6 +12,8 @@ Ext.define("CRWeb.view.Main", {
         items: [
 			{ xtype: 'Home' },
 			{ xtype: 'News' },
+			{ xtype: 'Tweets'},
+			{ xtype: 'News' },
 			{
 				docked: 'bottom',
 				xtype: 'Player'

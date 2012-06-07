@@ -833,7 +833,26 @@ input, textarea {
 .x-mask-map {
   background: transparent !important;
 }
+.tweets h2 {
+font-weight:700;
+padding-bottom:3px;
+}
 
+.tweets img {
+border-radius:5px;
+float:left;
+}
+
+.tweets .tweet {
+font-size:70%;
+margin-left:60px;
+color:#333;
+min-height:50px;
+}
+
+.tweets .posted {
+float:right;
+}
 /**
  * @class Global_CSS
  *
