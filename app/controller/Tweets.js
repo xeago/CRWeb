@@ -23,7 +23,7 @@ Ext.define('CRWeb.controller.Tweets', {
 			}); */
 			
 			Ext.getStore('Tweets').load();
-
+			
 			this.loadedTweets = true;
 		}
 	}
