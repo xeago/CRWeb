@@ -15,7 +15,7 @@ Ext.define("CRWeb.view.News", {
 			grouped:true,
 			
 			store: {
-				autoLoad:true,
+				,
 				fields:['title','author','content','categories'],
 				grouper: {
 					groupFn: function(record) {

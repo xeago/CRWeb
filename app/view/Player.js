@@ -7,25 +7,13 @@ var sponsorPanel  = Ext.create('Ext.Carousel', {
     layout: 'card',
 	cls : ["sponsorPanel","cards"],
 	flex:4,
-
-    items : [
+	items: [
 		{
 			html: '<img style="height:100%;" src="https://www.dropbox.com/s/xuy6xslukyhfm77/nsfw.jpg?dl=1"></img>',
 			style :'text-align:center;',
-			cls:'card'
-		},
-		{
-			html: '<img style="height:100%;" src="https://www.dropbox.com/s/p94e345k8je513k/sfw.jpg?dl=1"></img>',
-			style :'text-align:center;',
-			cls:'card'
-		},
-		{
-			html: '<img style="height:100%;" src="https://www.dropbox.com/s/cosjve0emjwbzw7/sfw2.jpg?dl=1"></img>',
-			style :'text-align:center;',
-			cls:'card'
+			cls:'card'			
 		}
-		
-	]
+		]
 });
 
 
@@ -73,6 +61,7 @@ var playerPanel = Ext.create('Ext.Container', {
 
 Ext.define("CRWeb.view.Player", {
     extend: 'Ext.Panel',
+	
 	xtype: 'Player',	
     config: {
 		items:[playerPanel]
