@@ -1,5 +1,5 @@
 .playerButton {
-  
+  height:4em;
   /* Override their button style, because this is an important button, hence the !important*/
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFFFFF), color-stop(3%, #FFDDDD), color-stop(100%, #FFAA00))!important;
   background-image: -webkit-linear-gradient(top, #FFFFFF, #FFDDDD 3%, #FFAA00)!important;
@@ -10,7 +10,7 @@
 .playerButton-button-pressing, .playerButton-button-pressing:after{
   background-image: none;
   background-color: #FFDDDD !important;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EEAA00), color-stop(10%, #AA4444), color-stop(65%, #FFDDDD), color-stop(100%, #EEAA00)) !important;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FF9900), color-stop(10%, #FFB13D), color-stop(65%, #FF850A), color-stop(100%, #FFAA00)) !important;
   background-image: -webkit-linear-gradient(top, #FF9900, #FFB13D 10%, #FF850A 65%, #FFAA00)!important;
-  background-image: linear-gradient(top, #EEAA00, #AA4444 10%, #FFDDDD 65%, #EEAA00)!important;
+  background-image: linear-gradient(top, #FF9900, #FFB13D 10%, #FF850A 65%, #FFAA00)!important;
 }
