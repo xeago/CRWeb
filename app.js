@@ -4,11 +4,13 @@ Ext.Loader.setPath({
 });
 
 Ext.application({
+
     name: 'CRWeb',
 	controllers:['NewsController','Tweets'],
 	
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox','Ext.Audio','Ext.Img'
+		
     ],
 
     views: ['Main','News','Tweets','Home','SponsorPage','Player'],
