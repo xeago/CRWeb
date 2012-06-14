@@ -1,7 +1,7 @@
 Ext.define("CRWeb.view.News", {
     extend: 'Ext.navigation.View',
 	xtype: 'News',
-		
+	requires : ['Ext.data.proxy.JsonP'],
     config: {
 	
 		title:'Nieuws',
