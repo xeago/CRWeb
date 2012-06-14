@@ -23,7 +23,7 @@ var rotateImage=function(){
 };
 sponsorPanel.on('painted',function(){
 	Ext.Ajax.request({
-		url:'http://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
+		url:'kindasfw.json',
 		success: function (response){
 			imagesJson=Ext.JSON.decode(response.responseText);
 			rotateImage();
@@ -86,7 +86,7 @@ var audioStreamUrl;
 
 button.on('painted',function(){
 		Ext.Ajax.request({
-			url:'http://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+			url:'json.json',
 			success: function (response){
 				audioStreamUrl = Ext.JSON.decode(response.responseText);
 				audio =playerPanel.down('audio');
