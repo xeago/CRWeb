@@ -11,8 +11,8 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    views: ['Main','News','Tweets','Home','Player'],
-	stores: ['Tweets','Sponsor'],
+    views: ['Main','News','Tweets','Home','SponsorPage','Player'],
+	stores: ['Tweets'],
 	twitterSearch: 'Carnaval Radio',
 	
     icon: {
@@ -38,7 +38,9 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         //// Initialize the main view
-        Ext.Viewport.add(Ext.create('CRWeb.view.Main'));
+		var mainPanel = Ext.create('CRWeb.view.Main');
+		Ext.Viewport.add(mainPanel);
+        
 		
     },
 

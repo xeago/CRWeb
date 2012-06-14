@@ -6,9 +6,10 @@ Ext.define('CRWeb.view.Tweets', {
     ],
 
     xtype: 'Tweets',
-
+	id : 'Tweets',
     config: {
 
+		id : 'Tweets',	
         title: 'Tweets',
         iconCls: 'chat',
         cls: 'tweets',

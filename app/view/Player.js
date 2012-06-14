@@ -1,62 +1,113 @@
-var audioElement = document.createElement('audio');
-audioElement.setAttribute('src', 'http://50.7.241.10:8021/');
-
-
-
-var sponsorPanel  = Ext.create('Ext.Carousel', {
-    layout: 'card',
-	cls : ["sponsorPanel","cards"],
+var sponsorPanel = Ext.create('Ext.Img', {
+	xtype:'Image',
 	flex:4,
-	items: [
+	onTap: function(){goToSponsorTab();},
+	
+	style:'-webkit-background-size: contain;background-position:center;',
+});
+
+function goToSponsorTab() 
+{
+	var child=Ext.getCmp('Sponsors');
+	var par =child.getParent() 
+	par.setActiveItem(child);
+
+}
+
+var imagesJson;
+var imagesIndex=0;
+var rotateImage=function(){
+	if (imagesIndex>=imagesJson.length){imagesIndex=0}
+	sponsorPanel.setSrc(imagesJson[imagesIndex].url);
+	imagesIndex+=1;
+};
+sponsorPanel.on('painted',function(){
+	Ext.Ajax.request({
+		url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
+		success: function (response){
+			imagesJson=Ext.JSON.decode(response.responseText);
+			rotateImage();
+			setInterval(rotateImage,10000);
+		},
+	});
+});
+
+var IsHigh =true ;
+var buttonToggleQuality = Ext.create('Ext.Button', {
+	id: 'qualityButton',
+	cls: ["qualirtButton"],
+	text: 'high',
+	flex:1,	 
+	handler:function(){
+		var container = this.getParent(),
+		// use ComponentQuery to get the audio component (using its xtype)
+		audio = container.down('audio');	
+		if (!IsHigh)
 		{
-			html: '<img style="height:100%;" src="https://www.dropbox.com/s/xuy6xslukyhfm77/nsfw.jpg?dl=1"></img>',
-			style :'text-align:center;',
-			cls:'card'			
+			audio.setUrl(audioStreamUrl.low);
+			this.setText('High');
+			IsHigh =true;
 		}
-		]
+		else 		
+		{
+			audio.setUrl(audioStreamUrl.high);
+			this.setText('Low');
+			IsHigh =false;
+		}
+	}
 });
 
 
 
-var playing=false;
 var button = Ext.create('Ext.Button', {
-		iconCls: 'arrow_right',
-		iconMask: true,
-		id: 'playerButton',
-		cls: ["playerButton"],
-		flex:1,	 
-		handler:function(){
-			var container = this.getParent(),
-			// use ComponentQuery to get the audio component (using its xtype)
-			audio = container.down('audio');	
-			if (playing)
-			{
-				audio.pause();		
-				playing=!playing;
-				this.setIconCls( 'arrow_right');
-			}
-			else 		
-			{
-				audio.play();
-				playing=!playing;
-				this.setIconCls('delete');
-			}
+	iconCls: 'arrow_right',
+	iconMask: true,
+	id: 'playerButton',
+	cls: ["playerButton"],
+	flex:1,	 
+	handler:function(){
+		var container = this.getParent(),
+		// use ComponentQuery to get the audio component (using its xtype)
+		audio = container.down('audio');	
+		if (audio.isPlaying())
+		{
+			audio.pause();	
+			this.setIconCls( 'arrow_right');
 		}
-	});
-button.setPressedCls("playerButton-button-pressing");
-button.setHeight(Ext.Viewport.getWindowHeight()*0.6);
+		else 		
+		{
+			audio.play();
+			this.setIconCls('delete');
+		}
+	}
+});
 
-var playerPanel = Ext.create('Ext.Container', {
-    
+var audioStreamUrl;
+
+button.on('painted',function(){
+		Ext.Ajax.request({
+			url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+			success: function (response){
+				audioStreamUrl = Ext.JSON.decode(response.responseText);
+				audio =playerPanel.down('audio');
+				audio.setUrl(audioStreamUrl.high);
+			}
+		})
+	}); 
+
+	
+button.setPressedCls("playerButton-button-pressing");
+//button.setHeight('10%');
+
+var playerPanel = Ext.create('Ext.Container', {  
     layout: 'hbox',
-    items: [button,sponsorPanel,
+    items: [button,sponsorPanel,buttonToggleQuality,
 		{
             xtype : 'audio',
             hidden: true,
-            url   : 'http://50.7.241.10:8021/'
+            url   : ''
         }
 	]
-	
 });
 
 Ext.define("CRWeb.view.Player", {
@@ -67,21 +118,3 @@ Ext.define("CRWeb.view.Player", {
 		items:[playerPanel]
     }
 });
-
-
-
-                    
-function rotateCarousel()
-{
-	var next =sponsorPanel.getActiveIndex( )+1;
-	if(!(next <sponsorPanel.getItems( ).length-1))
-	{
-		next=0;
-	}
-	 sponsorPanel.setActiveItem(next);	
-}
-
-setInterval(function(){rotateCarousel()},10000);
-
-
-
