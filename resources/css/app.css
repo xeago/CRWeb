@@ -7416,9 +7416,9 @@ audio {
 .x-toolbar-dark {
   background-image: none;
   background-color: #FCD583;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EE9F10), color-stop(3%, #FFC570), color-stop(100%, #EEa535));
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EE9F10), color-stop(40%, #FFC570), color-stop(100%, #EEa535));
   background-image: -webkit-linear-gradient(top, #EE9F10, #FFC570 40%, #EEa535 );
-  background-image: linear-gradient(top, #EE9F10, #FFC570 3%, #EEa535);
+  background-image: linear-gradient(top, #EE9F10, #FFC570 40%, #EEa535);
   border-bottom-color: #FFC570;
   border-top-color: #FFC570;
   }
