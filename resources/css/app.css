@@ -7201,21 +7201,22 @@ audio {
 /* line 231, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark {
   background-image: none;
-  background-color: #0e4b75;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1676b9), color-stop(3%, #11598c), color-stop(100%, #0b3c5e));
-  background-image: -webkit-linear-gradient(top, #1676b9, #11598c 3%, #0b3c5e);
-  background-image: linear-gradient(top, #1676b9, #11598c 3%, #0b3c5e);
-  border-top-color: #0b3c5e;
-  border-bottom-color: #061f31;
+  background-color: #FCD583;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FCD583), color-stop(3%, #FFC570), color-stop(100%, #EE9F10));
+  background-image: -webkit-linear-gradient(top, #FCD583, #FFC570 3%, #EE9F10);
+  background-image: linear-gradient(top, #FCD583, #FFC570 3%, #EE9F10);
+  border-bottom-color: #EE9F10;
+  border-top-color: #FFC570;
 }
 /* line 236, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark .x-tab {
-  color: #63b4ec;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
 }
 /* line 240, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark .x-tab-active {
   color: white;
-  border-bottom: 1px solid #105483;
+  border-bottom: 1px solid #A76500;
 }
 /* line 245, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark .x-tab-pressed {
@@ -7237,10 +7238,10 @@ audio {
 /* line 259, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark.x-docked-bottom .x-tab-active {
   background-image: none;
-  background-color: #0b3c5e;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #061f31), color-stop(10%, #092e47), color-stop(65%, #0b3c5e), color-stop(100%, #0c3e60));
-  background-image: -webkit-linear-gradient(top, #061f31, #092e47 10%, #0b3c5e 65%, #0c3e60);
-  background-image: linear-gradient(top, #061f31, #092e47 10%, #0b3c5e 65%, #0c3e60);
+  background-color: #A76500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EE9F10), color-stop(10%, #EE9F10), color-stop(65%, #C07600), color-stop(100%, #EE9F10));
+  background-image: -webkit-linear-gradient(top, #EE9F10, #EE9F10 10%, #C07600 65%, #EE9F10);
+  background-image: linear-gradient(top, #EE9F10, #EE9F10 10%, #C07600 65%, #EE9F10);
   text-shadow: rgba(0, 0, 0, 0.5) 0 -0.08em 0;
   -webkit-box-shadow: #092e47 0 0 0.25em inset;
   box-shadow: #092e47 0 0 0.25em inset;
@@ -7257,10 +7258,10 @@ audio {
 /* line 276, ../themes/stylesheets/sencha-touch/default/widgets/_tabs.scss */
 .x-tabbar-dark.x-docked-top .x-tab-active {
   background-image: none;
-  background-color: #0b3c5e;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #061f31), color-stop(10%, #092e47), color-stop(65%, #0b3c5e), color-stop(100%, #0c3e60));
-  background-image: -webkit-linear-gradient(top, #061f31, #092e47 10%, #0b3c5e 65%, #0c3e60);
-  background-image: linear-gradient(top, #061f31, #092e47 10%, #0b3c5e 65%, #0c3e60);
+  background-color: #A76500;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EE9F10), color-stop(10%, #EE9F10), color-stop(65%, #C07600), color-stop(100%, #EE9F10));
+  background-image: -webkit-linear-gradient(top, #EE9F10, #EE9F10 10%, #C07600 65%, #EE9F10);
+  background-image: linear-gradient(top, #EE9F10, #EE9F10 10%, #C07600 65%, #EE9F10);
   color: white;
 }
 
@@ -7414,12 +7415,13 @@ audio {
 /* line 128, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark {
   background-image: none;
-  background-color: #1468a2;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1e93e4), color-stop(3%, #1676b9), color-stop(100%, #11598c));
-  background-image: -webkit-linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
-  background-image: linear-gradient(top, #1e93e4, #1676b9 3%, #11598c);
-  border-color: black;
-}
+  background-color: #FCD583;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FCD583), color-stop(3%, #FFC570), color-stop(100%, #EE9F10));
+  background-image: -webkit-linear-gradient(top, #EE9F10, #FFC570 40%, #EEa535 );
+  background-image: linear-gradient(top, #FCD583, #FFC570 3%, #EE9F10);
+  border-bottom-color: #FFC570;
+  border-top-color: #FFC570;
+  }
 /* line 132, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark .x-title {
   color: white;
