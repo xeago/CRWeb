@@ -23,7 +23,7 @@ var rotateImage=function(){
 };
 sponsorPanel.on('painted',function(){
 	Ext.Ajax.request({
-		url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
+		url:'http://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
 		success: function (response){
 			imagesJson=Ext.JSON.decode(response.responseText);
 			rotateImage();
@@ -36,7 +36,7 @@ var IsHigh =true ;
 var buttonToggleQuality = Ext.create('Ext.Button', {
 	id: 'qualityButton',
 	cls: ["qualirtButton"],
-	text: 'high',
+	text: 'High',
 	flex:1,	 
 	handler:function(){
 		var container = this.getParent(),
@@ -86,7 +86,7 @@ var audioStreamUrl;
 
 button.on('painted',function(){
 		Ext.Ajax.request({
-			url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+			url:'http://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
 			success: function (response){
 				audioStreamUrl = Ext.JSON.decode(response.responseText);
 				audio =playerPanel.down('audio');
