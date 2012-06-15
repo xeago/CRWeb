@@ -9,7 +9,7 @@ Ext.application({
 	controllers:['NewsController','Tweets'],
 	
     requires: [
-        'Ext.MessageBox','Ext.Audio','Ext.Img'
+        'Ext.MessageBox','Ext.Audio','Ext.Img','Ext.Button'
 		
     ],
 
