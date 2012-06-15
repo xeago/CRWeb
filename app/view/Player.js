@@ -12,7 +12,7 @@ Ext.define('sponsorPanel' ,{
 			tap: function(){goToSponsorTab();},		
 			painted : function(panel) {
 				Ext.Ajax.request({
-					url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
+					url:'kindasfw.json',
 					success: function (response){
 						imagesJson=Ext.JSON.decode(response.responseText);
 						sponsorPanel=panel;
@@ -104,7 +104,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+						url:'json.json',
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();
@@ -126,7 +126,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+						url:'json.json',
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();
