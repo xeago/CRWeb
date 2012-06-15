@@ -1,4 +1,3 @@
-
 Ext.define('sponsorPanel' ,{
 	extend:'Ext.Img',
 	xtype: 'sponsorPanel',
@@ -12,7 +11,7 @@ Ext.define('sponsorPanel' ,{
 			tap: function(){goToSponsorTab();},		
 			painted : function(panel) {
 				Ext.Ajax.request({
-					url:'kindasfw.json',
+					url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
 					success: function (response){
 						imagesJson=Ext.JSON.decode(response.responseText);
 						sponsorPanel=panel;
@@ -55,22 +54,26 @@ Ext.define('qualityButton', {
 		cls: ["qualirtButton"],
 		text: 'High',
 		handler:function(){
-			var container = this.getParent();
-			var audio = container.down('audio');	
+			var container = this.getParent(),
+			audio = container.down('audio');	
+			var wasPlaying =audio.isPlaying();						
 			if (IsHigh)
 			{
-				alert('debug high');
 				audio.setUrl(audioStreamUrl.low);
 				this.setText('Low');
 				IsHigh =false;
 			}
 			else 		
 			{
-				alert('debug low');
 				audio.setUrl(audioStreamUrl.high);
 				this.setText('High');
 				IsHigh =true;
 			}
+			if(wasPlaying)
+			{
+				audio.play();
+			}			
+
 		}
 	}
 });
@@ -141,9 +144,8 @@ Ext.define('playerPanel', {
 			
 			{
 				xtype : 'audio',
-				//hidden: true,
-				url   : '',
-				flex:3
+				hidden: true,
+				url   : ''
 			}
 		]
 	}
