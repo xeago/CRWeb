@@ -6,10 +6,10 @@ Ext.Loader.setPath({
 Ext.application({
 
     name: 'CRWeb',
-	controllers:['NewsController','Tweets'],
+	controllers:['NewsController','Tweets','PlayerController'],
 	
     requires: [
-        'Ext.MessageBox','Ext.Audio','Ext.Img'
+        'Ext.MessageBox','Ext.Audio','Ext.Img','Ext.Button'
 		
     ],
 
