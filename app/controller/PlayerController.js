@@ -13,9 +13,9 @@ Ext.define('CRWeb.controller.PlayerController', {
 	togglePlay : function(button)
 	{ 
 		//alert('JOI');
-		var container = button.getParent(),
+		var container = button.getParent();
 		// use ComponentQuery to get the audio component (using its xtype)
-		audio = container.down('audio');	
+		var audio = container.down('audio');	
 		if (audio.isPlaying())
 		{
 			audio.pause();	
