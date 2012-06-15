@@ -55,16 +55,18 @@ Ext.define('qualityButton', {
 		cls: ["qualirtButton"],
 		text: 'High',
 		handler:function(){
-			var container = this.getParent(),
-			audio = container.down('audio');	
+			var container = this.getParent();
+			var audio = container.down('audio');	
 			if (IsHigh)
 			{
+				alert('debug high');
 				audio.setUrl(audioStreamUrl.low);
 				this.setText('Low');
 				IsHigh =false;
 			}
 			else 		
 			{
+				alert('debug low');
 				audio.setUrl(audioStreamUrl.high);
 				this.setText('High');
 				IsHigh =true;
@@ -139,8 +141,9 @@ Ext.define('playerPanel', {
 			
 			{
 				xtype : 'audio',
-				hidden: true,
-				url   : ''
+				//hidden: true,
+				url   : '',
+				flex:3
 			}
 		]
 	}
