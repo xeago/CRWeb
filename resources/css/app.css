@@ -7415,10 +7415,10 @@ audio {
 /* line 128, ../themes/stylesheets/sencha-touch/default/widgets/_toolbar.scss */
 .x-toolbar-dark {
   background-image: none;
-  background-color: #FCD583;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FCD583), color-stop(3%, #FFC570), color-stop(100%, #EE9F10));
+  background-color: #EE9F10;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #EE9F10), color-stop(40%, #FFC570), color-stop(100%, #EE9F10));
   background-image: -webkit-linear-gradient(top, #EE9F10, #FFC570 40%, #EEa535 );
-  background-image: linear-gradient(top, #FCD583, #FFC570 3%, #EE9F10);
+  background-image: linear-gradient(top, #EE9F10, #FFC570 40%, #EE9F10);
   border-bottom-color: #FFC570;
   border-top-color: #FFC570;
   }
