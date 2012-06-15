@@ -1,3 +1,4 @@
+
 Ext.define('sponsorPanel' ,{
 	extend:'Ext.Img',
 	xtype: 'sponsorPanel',

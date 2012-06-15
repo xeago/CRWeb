@@ -2,17 +2,23 @@ Ext.define('CRWeb.controller.NewsController', {
     extend: 'Ext.app.Controller',
     
     config: {
-        refs: {
-            News: 'News'
+        refs:
+		{
+            News: 'News',
         },
-        control: {
-            'News list':{
-				itemtap: 'showPost'
-			}
-        }
-    },
+        control: 
+		{
+            'button[action=addUser]':{ tap:'addUser'}
+		},
+	},
+	addUser: function()
+	{
+		alert('jo');
+	}
+});
 
-	showPost: function(list, index, element, record) {
+
+		/*showPost: function(list, index, element, record) {
 		this.getNews().push({
 			xtype:'panel',
 			title:record.get('title'),
@@ -20,6 +26,6 @@ Ext.define('CRWeb.controller.NewsController', {
 			scrollable: true,
 			styleHtmlContent:true
 		});
-	}
+		*/
 	
-});
+	

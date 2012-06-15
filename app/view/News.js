@@ -7,8 +7,14 @@ Ext.define("CRWeb.view.News", {
 		title:'Nieuws',
 		displayField:'title',
 		
-		items: {
-			xtype:'list',
+		items: [
+			{
+			xtype:'button',
+			action:'addUser'
+			
+			},
+			
+			/*xtype:'list',
 			title:'Nieuws',
 			
 			itemTpl:'{title}',
@@ -36,7 +42,8 @@ Ext.define("CRWeb.view.News", {
 	                    rootProperty: 'responseData.feed.entries'
 	                }
 				}
-			}
+				*/
+			],
 		}
     }
-});
+);
