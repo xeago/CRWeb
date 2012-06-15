@@ -56,6 +56,7 @@ Ext.define('qualityButton', {
 		handler:function(){
 			var container = this.getParent(),
 			audio = container.down('audio');	
+			var wasPlaying =audio.isPlaying();						
 			if (IsHigh)
 			{
 				audio.setUrl(audioStreamUrl.low);
@@ -68,6 +69,11 @@ Ext.define('qualityButton', {
 				this.setText('High');
 				IsHigh =true;
 			}
+			if(wasPlaying)
+			{
+				audio.play();
+			}			
+
 		}
 	}
 });
