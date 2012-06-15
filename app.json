@@ -59,7 +59,11 @@
         {
             "path": "resources/css/app.css",
             "update": "delta"
-        }
+        },
+		{
+			"path": "resources/css/player.css",
+            "update": "delta"
+		}
     ],
 
     /**

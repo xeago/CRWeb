@@ -1,5 +1,6 @@
 .playerButton {
-  height:3em;
+  
+  height: 3em;
   /* Override their button style, because this is an important button, hence the !important*/
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #FFFFFF), color-stop(3%, #FFDDDD), color-stop(100%, #FFAA00))!important;
   background-image: -webkit-linear-gradient(top, #FFFFFF, #FFDDDD 3%, #FFAA00)!important;
