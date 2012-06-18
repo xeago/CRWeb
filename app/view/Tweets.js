@@ -16,8 +16,9 @@ Ext.define('CRWeb.view.Tweets', {
 
         items: [
             {
-                docked: 'top',
-                xtype: 'titlebar'
+               // docked: 'top',
+                xtype: 'titlebar',
+				cls:'displaynone'
             }
         ],
 
