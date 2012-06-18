@@ -14,7 +14,7 @@ Ext.application({
     ],
 
     views: ['Main','News','Tweets','Home','SponsorPage','Player'],
-	stores: ['Tweets'],
+	stores: ['Tweets','SponsorStore'],
 	twitterSearch: 'Carnaval Radio',
 	
     icon: {

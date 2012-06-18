@@ -1,5 +1,24 @@
+/*Ext.define('SponsorPanelList',{
+	extend:'Ext.List',
+	xtype:'SponsorPanelList',
+	grouped:true,
+	
+	config:
+	{
+		items:
+		{
+			xtype:	'list',
+			store : 'SponsorStore',
+			itemTpl:  '{name}' ,
+		}
+	}
+
+}); */
+
+
+
 Ext.define("CRWeb.view.SponsorPage", {
-    extend: 'Ext.navigation.View',
+    extend: 'Ext.List',
 	xtype: 'SponsorPage',
 	id: 'Sponsors',
 		
@@ -11,28 +30,34 @@ Ext.define("CRWeb.view.SponsorPage", {
 		styleHtmlContent:true,
 		cls: 'home',
 		
-		items: {
-			xtype:'list',
-			title:'Onze Sponsoren',
+		emptyText: '<p class="no-searches">No sponsors found</p>',
+		itemTpl: Ext.create('Ext.XTemplate',       
+            '<div >',
+                '<p>jojo</p>',                
+            '</div>'
+			),
 			
-			itemTpl:'Sponsor',
-			grouped:true,
+		items: [
+            {
+                docked: 'top',
+                xtype: 'titlebar'
+            }
+        ],
+			/* items: [
+			{
+				xtype:'SponsorPanelList',
+				title:'Sponsoren'
+			}
+		], 
+		*/
+		listeners: 
+		{			
+			painted : function() 
+			{
+				
+			}
 		}
 	}
 });
 
 
-function getSponsoren()
-{
-	Ext.Ajax.request({
-		url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
-		success:( function (response){
-			var page=Ext.getCmp('Sponsors');
-			var htmlText ;
-			for	(i=0;i<response.length;i++){	
-				htmlText += response[i].url;
-			}
-		})
-	});
-	page.setHtml(htmlText);
-}

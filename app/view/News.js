@@ -9,7 +9,7 @@ Ext.define("CRWeb.view.News", {
 		
 		items: {
 			xtype:'list',
-			title:'easd',
+			title:'Nieuws',
 			
 			itemTpl:'{title}',
 			grouped:true,
