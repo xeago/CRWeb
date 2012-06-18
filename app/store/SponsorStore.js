@@ -1,34 +1,36 @@
-// Set up a model to use in our Store
-Ext.define('SponsorModel', {
-    extend: 'Ext.data.Model',
-	xtype:'SponsorModel',
-    config: {
-        fields: [
-            {name: 'name', type: 'string'},
-            {name: 'logoUrl',  type: 'string'},
-            {name: 'description',  type: 'string'},
-            {name: 'sponsorType',  type: 'string'},
-			{name: 'order',  type: 'int'}
-        ]
-    }
-});
-
 Ext.define('CRWeb.store.SponsorStore', {
-	extend:'Ext.data.Store',
-	xtype:	'SponsorStore',
-	config : 
-	{
-		model: 'SponsorModel',
-		proxy: {
-			type: 'jsonp',
-			url : 'https://www.dropbox.com/s/yitupffrygf59rg/Sponsor.json?dl=1',
-			reader: {
-				type: 'json',
-				//rootProperty: ''
-			}
-		},
-		autoLoad: true
+    extend: 'Ext.data.Store',
+
+    config: {
+        fields: [ 'type','order','items'],
+
+
+        proxy: {
+            type: 'ajax',
+            url: 'http://www.dropbox.com/s/yitupffrygf59rg/Sponsor.json?dl=1',
+
+            pageParam: 'page',
+			
+            reader: {
+                type: 'json',  
+			//	rootProperty: 'responseData.feed.entries'				
+            }
+        },
+		
+		sorters: [
+			new Ext.util.Sorter({
+				property : 'order',
+				direction: 'ASC',
+				sorterFn: function(record1, record2) {
+                var order1 = record1,
+                    order2 = record2;
+				
+                return order1 > order2 ? 1 : (order1 == order2 ? 0 : -1);
+				}
+			})
+		],
 		
 		
-	}
+		autoload: true,
+    }
 });

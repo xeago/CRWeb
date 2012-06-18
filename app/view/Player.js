@@ -24,6 +24,22 @@ Ext.define('sponsorPanel' ,{
 	}
 });
 
+Ext.define('logoPanel' ,{
+	extend:'Ext.Img',
+	xtype: 'logoPanel',
+	config :
+	{
+		xtype:'Image',		
+		src:'resources/images/logo.png',
+		style:'-webkit-background-size: contain;background-position:center;',
+		listeners: 
+		{
+			tap: function(){goToSponsorTab();},		
+			
+		}
+	}
+});
+
 function goToSponsorTab() 
 {
 	var child=Ext.getCmp('Sponsors');
@@ -119,8 +135,12 @@ Ext.define('playerPanel', {
 				}	
 			},
 			{
+			xtype: 'logoPanel',
+			flex:2,
+			},
+			{
 			xtype: 'sponsorPanel',
-			flex:4,
+			flex:2,
 			},
 			{
 				xtype: 'qualityButton',
