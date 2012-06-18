@@ -6,21 +6,12 @@ Ext.define('CRWeb.controller.SponsorController', {
             SponsorPage: 'SponsorPage'
         },
         control: {
-            'SponsorPage List':{
-				itemtap: 'showPost'
-			}
+			'SponsorPage List'::{
+				itemtap: 'alertIt'
+				}
+            
         }
-    },
-	
-	
-	showPost: function(list, index, element, record) {
-		this.getNews().push({
-			xtype:'panel',
-			title:record.get('title'),
-			html:record.get('content'),
-			scrollable: true,
-			styleHtmlContent:true
-		});
-	}
-	
+		alertIt: function(){alert('Konichiwa !');}
+		
+    },	
 });

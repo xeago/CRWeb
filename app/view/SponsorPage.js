@@ -1,38 +1,55 @@
-Ext.define("CRWeb.view.SponsorPage", {
-    extend: 'Ext.navigation.View',
-	xtype: 'SponsorPage',
-	id: 'Sponsors',
-		
+Ext.define('CRWeb.view.SponsorPage', {
+
+    extend: 'Ext.List',
+    
+
+    xtype: 'SponsorPage',
+	id : 'Sponsors',
     config: {
-	
-		title:'Sponsoren',
-		displayField:'title',
-		scrollable:true,
-		styleHtmlContent:true,
-		cls: 'home',
-		
-		items: {
-			xtype:'list',
-			title:'Onze Sponsoren',
-			
-			itemTpl:'Sponsor',
-			grouped:true,
-		}
-	}
-});
 
+		id : 'Sponsors',	
+        title: 'Sponsoren',
+        iconCls: 'chat',
+        
 
-function getSponsoren()
-{
-	Ext.Ajax.request({
-		url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
-		success:( function (response){
-			var page=Ext.getCmp('Sponsors');
-			var htmlText ;
-			for	(i=0;i<response.length;i++){	
-				htmlText += response[i].url;
+     
+
+        store: 'SponsorStore',
+        limit: 10,
+        disableSelection: true,
+
+        emptyText: '<p class="no-searches">Error loading sponsors</p>',
+
+        itemTpl: Ext.create('Ext.XTemplate',       
+            '<div style="text-align:center;">',
+                '<h1 style="text-align:center; margin-bottom:20px;">{type}</h1>',
+				'{[this.name(values.items,values.order)]}',
+            '</div>',
+		 {
+			name:function (items, itemsOnOneLine)
+			{				
+				var outputstring='';
+				itemsOnOneLine= itemsOnOneLine;
+				var size=100/itemsOnOneLine;
+				for(i=0;i<items.length;i++)
+				{
+					
+					outputstring+='<img src="'+items[i].logoUrl +'"  style="width:'+size+'%; max-height:'+size+'%; text-align:center; padding:1px;"></img>';
+				}
+				
+					
+			return outputstring; //we return all images of this cat.
 			}
-		})
-	});
-	page.setHtml(htmlText);
-}
+		 }
+        ),
+		
+		listeners: 
+		{	
+			activate: function()
+			{			
+				var store = Ext.getStore('SponsorStore');
+				store.load();
+			}
+		}
+    }
+});
