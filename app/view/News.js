@@ -5,11 +5,12 @@ Ext.define("CRWeb.view.News", {
     config: {
 	
 		title:'Nieuws',
-		displayField:'title',
-		
+		//displayField:'title',
+		cls:'displaynone',
 		items: {
 			xtype:'list',
 			title:'Nieuws',
+			
 			
 			itemTpl:'{title}',
 			grouped:true,
