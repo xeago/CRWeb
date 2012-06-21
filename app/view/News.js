@@ -1,43 +1,51 @@
 Ext.define("CRWeb.view.News", {
-    extend: 'Ext.navigation.View',
+    extend: 'Ext.List',
+	//extend: 'Ext.navigation.View',
 	xtype: 'News',
 	requires : ['Ext.data.proxy.JsonP'],
     config: {
 	
-		title:'Nieuws',
+		//title:'Nieuws',
 		//displayField:'title',
-		cls:'displaynone',
-		items: {
+		 //items: 
+		//{
+		
 			xtype:'list',
 			title:'Nieuws',
+			//cls:'displaynone',
 			
-			
+			emptyText: '<p class="no-searches">No news found</p>',
 			itemTpl:'{title}',
 			grouped:true,
-			
-			store: {
-				
+
+			store: 
+			{
+				autoLoad: true,
 				fields:['title','author','content','categories'],
-				grouper: {
-					groupFn: function(record) {
-				                var cat = record.get('categories');
-								for (var i=0;i<cat.length;i++)
-								{
-									if (cat[i]=='Nieuws: Games / Xbox')
-										return 'Carnaval-Radio'
-								}
-								return 'Vasteloa'
-				            }
+				grouper: 
+				{
+					groupFn: function(record) 
+					{
+						var cat = record.get('categories');
+						for (var i=0;i<cat.length;i++)
+						{
+							if (cat[i]=='Nieuws: Games / Xbox')
+								return 'Carnaval-Radio'
+						}
+						return 'Vasteloa'
+					}
 				},
+			
 				proxy: {
 					type:'jsonp',
 					url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://tweakers.net/feeds/mixed.xml',
-	                reader: {
-	                    type: 'json',
-	                    rootProperty: 'responseData.feed.entries'
-	                }
+					reader: {
+						type: 'json',
+						rootProperty: 'responseData.feed.entries'
+					}
 				}
-			}
-		}
+			//}
+		
+		} 	
     }
 });
