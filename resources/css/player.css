@@ -19,3 +19,14 @@
 .displaynone{
   display:none !important; 
 }
+
+.newsItem{
+	margin:1em;
+}
+
+.sponsorStyle{
+	border-color:#5AF05A;
+	border-style:dashed;
+	border-width:2px;
+	text-align:center; padding:1px;
+}

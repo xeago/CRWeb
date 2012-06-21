@@ -12,14 +12,78 @@ Ext.define('CRWeb.controller.NewsController', {
         }
     },
 
-	showPost: function(list, index, element, record) {
-		this.getNews().push({
-			xtype:'panel',
-			title:record.get('title'),
-			html:record.get('content'),
-			scrollable: true,
-			styleHtmlContent:true
+	showPost: function(list, index, element, record) 
+	{
+	
+		var container=list.getParent();
+		//alert(container);
+		
+		container.setActiveItem(
+		{
+			xtype:'NewsItem',
+			items :
+			[	
+				{
+					xtype:'panel',
+					layout:
+					{
+						type:'hbox',
+						pack:'center',
+						align:'center',
+					},
+					height:'129px',
+					items :
+					[	
+						
+						{
+							xtype:'image',
+							centered:true,
+							flex:1,
+							src:'resources/images/logo.png',
+							height:'129px',
+							width:'513px',
+						},
+						
+					],
+				},			
+				{
+					xtype:'panel',
+					cls:'newsItem',
+					html:record.get('content'),
+				},
+				
+				{
+					xtype:'panel',
+					layout:'hbox',
+					items :
+					[	
+						{
+							xtype:'spacer'
+						},
+						{
+							xtype:'button',
+							flex:1,
+							text:'Ga terug',						
+							align : 'center',
+							listeners:
+							{
+								tap:function(theItem, e, eOpts)
+								{
+									goBack(theItem);
+								},
+							},
+						},
+						{
+							xtype:'spacer'
+						},
+					],
+				}
+			],	
 		});
 	}
-	
 });
+function goBack(anItem)
+		{
+		var container=anItem.getParent().getParent().getParent()  ;
+		container.setActiveItem(0);
+		}

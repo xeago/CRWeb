@@ -2,7 +2,7 @@ Ext.define('CRWeb.store.Tweets', {
     extend: 'Ext.data.Store',
 
     config: {
-        fields: [ 'content',  'author',  'publishedDate'],
+        fields: [ 'content',  'author',  'publishedDate','link'],
 
         pageSize: 10,
 

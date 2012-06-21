@@ -1,43 +1,70 @@
 Ext.define("CRWeb.view.News", {
-    extend: 'Ext.navigation.View',
+    extend: 'Ext.Container',
 	xtype: 'News',
 	requires : ['Ext.data.proxy.JsonP'],
     config: {
 	
 		title:'Nieuws',
+		layout:
+		{
+			type:'card',
+			animation: {
+				type: 'slide',
+				direction: 'left',
+				duration: 250
+			},
+			scrollable:true,
+		},
 		//displayField:'title',
-		cls:'displaynone',
-		items: {
-			xtype:'list',
-			title:'Nieuws',
-			
-			
-			itemTpl:'{title}',
-			grouped:true,
-			
-			store: {
+		//cls:'displaynone',
+		items :
+		[
+			{
+				xtype: 'list',
+				itemTpl:'{title}',
+				grouped:true,
 				
-				fields:['title','author','content','categories'],
-				grouper: {
-					groupFn: function(record) {
-				                var cat = record.get('categories');
-								for (var i=0;i<cat.length;i++)
-								{
-									if (cat[i]=='Nieuws: Games / Xbox')
-										return 'Carnaval-Radio'
+				store: {
+					autoLoad:true,
+					fields:['title','author','content','categories'],
+					grouper: {
+						groupFn: function(record) {
+									var cat = record.get('categories');
+									for (var i=0;i<cat.length;i++)
+									{
+										if (cat[i]=='Nieuws: Games / Xbox')
+											return 'Carnaval-Radio'
+									}
+									return 'Vasteloa'
 								}
-								return 'Vasteloa'
-				            }
-				},
-				proxy: {
-					type:'jsonp',
-					url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://tweakers.net/feeds/mixed.xml',
-	                reader: {
-	                    type: 'json',
-	                    rootProperty: 'responseData.feed.entries'
-	                }
+					},
+					proxy: {
+						type:'jsonp',
+						url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://tweakers.net/feeds/mixed.xml',
+						reader: {
+							type: 'json',
+							rootProperty: 'responseData.feed.entries'
+						}
+					}
+					
+					
 				}
 			}
-		}
+		],
+		
+		
     }
 });
+
+
+Ext.define('NewsItem',{
+	extend: 'Ext.Panel',
+	
+	xtype: 'NewsItem',
+	config: 
+	{
+		
+		scrollable:true,
+	}
+});
+
