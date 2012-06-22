@@ -34,7 +34,6 @@ Ext.define('CRWeb.controller.NewsController', {
 					height:'129px',
 					items :
 					[	
-						
 						{
 							xtype:'image',
 							centered:true,

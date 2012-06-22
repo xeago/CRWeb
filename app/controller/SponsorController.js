@@ -11,7 +11,7 @@ Ext.define('CRWeb.controller.SponsorController', {
 				}
             
         }
-		alertIt: function(){alert('Konichiwa !');}
+		//alertIt: function(){alert('Konichiwa !');}
 		
     },	
 });

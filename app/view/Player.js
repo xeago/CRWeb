@@ -11,7 +11,7 @@ Ext.define('sponsorPanel' ,{
 			tap: function(){goToSponsorTab();},		
 			painted : function(panel) {
 				Ext.Ajax.request({
-					url:'http://10.0.0.208/cr/json/rotatingMobileSponsor.json',
+					url:'http://cr.xeago.eu/json/rotatingMobileSponsor.json',
 					success: function (response){
 						imagesJson=Ext.JSON.decode(response.responseText);
 						sponsorPanel=panel;
@@ -54,7 +54,7 @@ var imagesIndex=0;
 var sponsorPanel;
 var rotateImage=function(){
 	if (imagesIndex>=imagesJson.length){imagesIndex=0}
-	sponsorPanel.setSrc(imagesJson[imagesIndex].url);
+	sponsorPanel.setSrc(imagesJson[imagesIndex].logoUrl);
 	imagesIndex+=1;
 };
 
@@ -123,7 +123,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+						url:'http://cr.xeago.eu/AudioStreams/Carnaval-Radio.json',
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();
@@ -149,7 +149,7 @@ Ext.define('playerPanel', {
 				listeners        : {
 					painted : function(button) {
 					Ext.Ajax.request({
-						url:'https://www.dropbox.com/s/39nwd5mbxffaoec/json.json?dl=1',
+						url:'http://cr.xeago.eu/AudioStreams/Carnaval-Radio.json',
 						success: function (response){
 							audioStreamUrl = Ext.JSON.decode(response.responseText);
 							var container = button.getParent();

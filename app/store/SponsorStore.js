@@ -7,7 +7,7 @@ Ext.define('CRWeb.store.SponsorStore', {
 
         proxy: {
             type: 'ajax',
-            url: 'http://10.0.0.208/cr/json/solidMobileSponsor.json',
+            url: 'http://cr.xeago.eu/json/solidMobileSponsor.json',
 
             pageParam: 'page',
 			
