@@ -13,8 +13,8 @@ Ext.application({
 		
     ],
 
-    views: ['Main','News','Tweets','Home','SponsorPage','Player'],
-	stores: ['Tweets','SponsorStore'],
+    views: ['Main','News','Tweets','Home','SponsorPage','Player','RecentSongs'],
+	stores: ['Tweets','SponsorStore','RecentSongsStore'],
 	twitterSearch: 'Carnaval Radio',
 	
     icon: {

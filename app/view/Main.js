@@ -13,6 +13,7 @@ Ext.define("CRWeb.view.Main", {
 			{ xtype: 'News' },
 			{ xtype: 'Tweets'},
 			{ xtype: 'SponsorPage'},			
+			{ xtype: 'RecentSongs'},	
 			{
 				
 				docked: 'bottom',

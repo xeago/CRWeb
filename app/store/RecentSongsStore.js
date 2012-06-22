@@ -1,23 +1,23 @@
-Ext.define('CRWeb.store.SponsorStore', {
+Ext.define('CRWeb.store.RecentSongsStore', {
     extend: 'Ext.data.Store',
 
     config: {
-        fields: [ 'type','order','items'],
+        fields: [ 'song'],
 
 
         proxy: {
             type: 'ajax',
-            url: 'http://cr.xeago.eu/json/solidMobileSponsor.json',
-
+            url: 'Songs.json',
+			//method: 'POST',
             pageParam: 'page',
 			
             reader: {
                 type: 'json',  
-			//	rootProperty: 'responseData.feed.entries'				
+				rootProperty: 'd'				
             }
         },
 		
-		sorters: [
+		/*sorters: [
 			new Ext.util.Sorter({
 				property : 'order',
 				direction: 'ASC',
@@ -28,9 +28,11 @@ Ext.define('CRWeb.store.SponsorStore', {
                 return order1 > order2 ? 1 : (order1 == order2 ? 0 : -1);
 				}
 			})
-		],
+		], */
+		
 		
 		
 		autoload: true,
     }
 });
+
