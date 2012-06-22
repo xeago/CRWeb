@@ -7,7 +7,7 @@ Ext.define('CRWeb.store.SponsorStore', {
 
         proxy: {
             type: 'ajax',
-            url: 'http://www.dropbox.com/s/yitupffrygf59rg/Sponsor.json?dl=1',
+            url: 'http://10.0.0.208/cr/json/solidMobileSponsor.json',
 
             pageParam: 'page',
 			

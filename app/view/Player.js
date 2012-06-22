@@ -11,7 +11,7 @@ Ext.define('sponsorPanel' ,{
 			tap: function(){goToSponsorTab();},		
 			painted : function(panel) {
 				Ext.Ajax.request({
-					url:'https://www.dropbox.com/s/5ajw9bebdbcp2ab/kindasfw.json?dl=1',
+					url:'http://10.0.0.208/cr/json/rotatingMobileSponsor.json',
 					success: function (response){
 						imagesJson=Ext.JSON.decode(response.responseText);
 						sponsorPanel=panel;
