@@ -9,7 +9,7 @@ Ext.define("CRWeb.view.Main", {
 		},
 		
         items: [
-			{ xtype: 'Home' },
+		/*	{ xtype: 'Home' }, */
 			{ xtype: 'News' },
 			{ xtype: 'Tweets'},
 			{ xtype: 'SponsorPage'},			

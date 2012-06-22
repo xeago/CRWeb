@@ -2,7 +2,8 @@ Ext.define('CRWeb.view.Tweets', {
 
     extend: 'Ext.List',
     requires: [
-        'Ext.plugin.PullRefresh'       
+        'Ext.plugin.PullRefresh'       ,
+		'Ext.TitleBar'
     ],
 
     xtype: 'Tweets',
