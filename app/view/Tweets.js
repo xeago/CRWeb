@@ -52,15 +52,14 @@ Ext.define('CRWeb.view.Tweets', {
 
         emptyText: '<p class="no-searches">No tweets found matching that search</p>',
 
-        itemTpl: Ext.create('Ext.XTemplate',       
-           '<a href="{link}" target="-blank">',
+        itemTpl: Ext.create('Ext.XTemplate',                 
 		   '<img src="http://api.twitter.com/1/users/profile_image/{author}" />',
-            '<div class="tweet">',
+            '<div class="tweet" onmousedown="window.open(\'{link}\'); return" target="-blank">',
                 '<span class="posted">{[this.posted(values.publishedDate)]}</span>',
                 '<h2>{author}</h2>',
                 '<p>{content}</p>',
             '</div>',
-			'</a>',
+			
             {
                 posted: function(date) {
                     try {
