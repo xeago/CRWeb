@@ -39,3 +39,41 @@
 {
 	margin:4em;
 }
+
+/* warning - ugly code incomming */
+
+#ext-tab-1
+{
+	background-image: url(../images/newsicon.png) !important;
+	-webkit-background-size: contain;
+	-webkit-box-flex: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+#ext-tab-2
+{
+ /*http://twitter.com/images/three_circles/twitter-bird-light-bgs.png*/
+	background-image: url(../images/twittericon2.png) !important;
+	-webkit-background-size: contain;
+	-webkit-box-flex: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+#ext-tab-3
+{
+	background-image: url(../images/sponsoricon.png) !important;
+	-webkit-background-size: contain;
+	-webkit-box-flex: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+#ext-tab-4
+{
+	background-image: url(../images/musicicon.png) !important;
+	-webkit-background-size: contain;
+	-webkit-box-flex: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}

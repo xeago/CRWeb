@@ -7,7 +7,7 @@ Ext.define('CRWeb.view.RecentSongs', {
     config: {
 
 		id : 'RecentSongs',	
-        title: 'Recent uitgezonden',
+        title: ' ',
 		
         items: [
             {

@@ -11,8 +11,8 @@ Ext.define('CRWeb.view.Tweets', {
     config: {
 
 		id : 'Tweets',	
-        title: 'Tweets',
-        iconCls: 'chat',
+        title: '&nbsp;&nbsp;&nbsp;&nbsp;',
+        iconCls: 'tweeticon',
         cls: 'tweets',
 
         items: [
