@@ -55,7 +55,7 @@ Ext.define('CRWeb.view.Tweets', {
 
         itemTpl: Ext.create('Ext.XTemplate',                 
 		   '<img src="http://api.twitter.com/1/users/profile_image/{author}" />',
-            '<div class="tweet" onmousedown="window.open(\'{link}\'); return" target="-blank">',
+            '<div class="tweet" onclick="window.open(\'{link}\'); return" target="-blank">',
                 '<span class="posted">{[this.posted(values.publishedDate)]}</span>',
                 '<h2>{author}</h2>',
                 '<p>{content}</p>',
