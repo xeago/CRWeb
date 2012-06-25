@@ -22,8 +22,17 @@ Ext.define('CRWeb.view.RecentSongs', {
 					fields:['song'],
 					proxy: {
 						type:'ajax',
-						method:'post',
-						url: 'http://cr.xeago.eu/RecentSongsService/RecentSongs',
+						actionMethods: {
+							create : 'POST',
+							read   : 'POST',
+							update : 'POST',
+							destroy: 'POST'
+						},
+						headers: {
+							'Content-Type': 'application/json',
+							'content-Length': '0'
+						},
+						url: 'http://cr.xeago.eu/RecentSongsService.asmx/RecentSongs',
 						reader: {
 							type: 'json',
 							rootProperty: 'd'
