@@ -32,7 +32,7 @@ Ext.define("CRWeb.view.News", {
 									var cat = record.get('categories');
 									for (var i=0;i<cat.length;i++)
 									{
-										if (cat[i]=='Nieuws: Games / Xbox')
+										if (cat[i]=='Website')
 											return 'Carnaval-Radio'
 									}
 									return 'Vasteloa'

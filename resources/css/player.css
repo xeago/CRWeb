@@ -25,10 +25,11 @@
 }
 
 .sponsorStyle{
-	border-color:#5AF05A;
-	border-style:dashed;
-	border-width:2px;
-	text-align:center; padding:1px;
+	border-color:#00a000;
+	border-style:solid;
+	border-width:1px;
+	text-align:center;
+	margin :5px;
 }
 
 .RecentSongItem
@@ -38,6 +39,10 @@
 .FirstRecentSong
 {
 	margin:4em;
+}
+.logo{
+ max-width: 100% !important; 
+ 
 }
 
 /* warning - ugly code incomming */
