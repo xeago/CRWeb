@@ -25,7 +25,8 @@ Ext.define('CRWeb.store.SponsorStore', {
                 var order1 = record1,
                     order2 = record2;
 				
-                return order1 > order2 ? 1 : (order1 == order2 ? 0 : -1);
+				return 0;
+               /* return order1 > order2 ? 1 : (order1 == order2 ? 0 : -1);*/
 				}
 			})
 		],

@@ -35,14 +35,10 @@ Ext.define('CRWeb.controller.NewsController', {
 					items :
 					[	
 						{
-							xtype:'image',
-							centered:true,
-							flex:1,
-							src:'resources/images/logo.png',
-							height:'129px',
-							width:'513px',
-						},
-						
+							xtype   : 'panel',
+							
+							html    : '<img class="logo" src="resources/images/logo.png" />'
+						}													
 					],
 				},			
 				{

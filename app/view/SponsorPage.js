@@ -34,7 +34,7 @@ Ext.define('CRWeb.view.SponsorPage', {
 				for(i=0;i<items.length;i++)
 				{
 					
-					outputstring+='<img src="'+items[i].logoUrl +'" class="sponsorStyle" style="width:'+size+'%; max-height:'+size+'%;"></img>';
+					outputstring+='<img src="'+items[i].logoUrl +'" class="sponsorStyle" style="width:'+(size-2)+'%; "></img>';
 				}
 				
 					
