@@ -83,3 +83,44 @@
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 }
+
+#ext-tab-5
+{
+	background-image: url(../images/infoicon.png) !important;
+	-webkit-background-size: contain;
+	-webkit-box-flex: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.info-header
+{
+    border-top:1px solid #ddd;
+  background-image: none;
+  background-color: #31E738;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #31E738), color-stop(3%, #28DC2F), color-stop(100%, #01AC07));
+  background-image: -webkit-linear-gradient(top, #31E738, #28DC2F 3%, #01AC07);
+  background-image: linear-gradient(top, #31E738, #28DC2F 3%, #01AC07);
+  color: #FFFFFF;
+  text-shadow: rgba(255, 255, 255, 0.25) 0 0.08em 0;
+  border-top: 1px solid #31E738;
+  border-bottom: 1px solid #01AC07;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 0.2em 1.02em;
+  text-shadow: rgba(255, 255, 255, 0.25) 0 0.08em 0;
+  margin:0 -18px;
+}
+
+.info-tekst p, .info-tekst strong
+{
+    margin:0;
+    min-height: 2.6em;
+    padding: 0.65em 0.8em;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+.info-tekst strong
+{
+    border: none;
+}
