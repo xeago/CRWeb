@@ -28,9 +28,10 @@ Ext.define('CRWeb.view.RecentSongs', {
 							update : 'POST',
 							destroy: 'POST'
 						},
+						enablePagingParams: false,
 						headers: {
 							'Content-Type': 'application/json',
-							'content-Length': '0'
+							//'content-Length': '0'
 						},
 						url: 'http://cr.xeago.eu/RecentSongsService.asmx/RecentSongs',
 						reader: {
