@@ -5,12 +5,17 @@ Ext.define("CRWeb.view.Main", {
 		
 		tabBarPosition: 'top',
 		tabBar: {
-			layout: { pack:'center'}
+			layout: { pack:'center'},
+			
+			//ui: 'gray'
+			
 		},
 		
         items: [
 		/*	{ xtype: 'Home' }, */
-			{ xtype: 'News' },
+			{ xtype: 'News' ,
+				
+			},
 			{ xtype: 'Tweets'},
 			{ xtype: 'SponsorPage'},			
 			{ xtype: 'RecentSongs'},	

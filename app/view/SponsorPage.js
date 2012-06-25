@@ -8,7 +8,7 @@ Ext.define('CRWeb.view.SponsorPage', {
     config: {
 
 		id : 'Sponsors',	
-        title: 'Sponsoren',
+        title: ' ',
         iconCls: 'chat',
         
 
