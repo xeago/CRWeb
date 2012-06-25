@@ -22,12 +22,12 @@ Ext.define("CRWeb.view.News", {
 			{
 				xtype: 'list',
 				itemTpl:'{title}',
-				grouped:true,
+				//grouped:true,
 				
 				store: {
 					autoLoad:true,
 					fields:['title','author','content','categories'],
-					grouper: {
+					/*grouper: {
 						groupFn: function(record) {
 									var cat = record.get('categories');
 									for (var i=0;i<cat.length;i++)
@@ -37,10 +37,10 @@ Ext.define("CRWeb.view.News", {
 									}
 									return 'Vasteloa'
 								}
-					},
+					},*/
 					proxy: {
 						type:'jsonp',
-						url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://tweakers.net/feeds/mixed.xml',
+						url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&q=http://feeds.feedburner.com/Iprojv',
 						reader: {
 							type: 'json',
 							rootProperty: 'responseData.feed.entries'
