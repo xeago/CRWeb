@@ -165,7 +165,8 @@ Ext.define('playerPanel', {
 			{
 				xtype : 'audio',
 				hidden: true,
-				url   : ''
+				url   : '',
+				loop:true,
 			}
 		]
 	}
